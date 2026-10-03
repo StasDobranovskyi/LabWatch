@@ -1,0 +1,25 @@
+{
+  "prepared_on": "2026-10-03",
+  "host": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "runs": [
+    {
+      "start": "2026-10-03T16:53:13.987071+03:00",
+      "returncode": 0,
+      "sha256": {
+        "firmware/build/firmware.elf": "0f7b87f63097adfc290c57ea018a65e5a05da061aaa48fd520c14fbfe05f85da",
+        "firmware/build/firmware.hex": "20c68952fd3c7ab6640f8ca53935729d6ca2c54d55dbba98597a92c2e0248415",
+        "firmware/build/firmware.bin": "c21e312881deefbec24a06e9808d3651367530ac8ea930d3b37cc011daa7f7df"
+      }
+    },
+    {
+      "start": "2026-10-03T16:53:19.432713+03:00",
+      "returncode": 0,
+      "sha256": {
+        "firmware/build/firmware.elf": "0f7b87f63097adfc290c57ea018a65e5a05da061aaa48fd520c14fbfe05f85da",
+        "firmware/build/firmware.hex": "20c68952fd3c7ab6640f8ca53935729d6ca2c54d55dbba98597a92c2e0248415",
+        "firmware/build/firmware.bin": "c21e312881deefbec24a06e9808d3651367530ac8ea930d3b37cc011daa7f7df"
+      }
+    }
+  ]
+}
