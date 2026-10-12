@@ -1,0 +1,7 @@
+#ifndef PROJECT_PROFILE_H
+#define PROJECT_PROFILE_H
+#define PROJECT_KIND LABWATCH
+#define PROJECT_NAME "LabWatch"
+#define IMU_PERIOD_MS 20u
+#define ADC_PERIOD_MS 50u
+#endif
