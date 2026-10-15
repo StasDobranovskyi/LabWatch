@@ -1,24 +1,23 @@
 # LabWatch
 
-Контроль стану лабораторного приладу. Власник: Добрановський Станіслав Вадимович, група ІО-36.
+Інтегрований прототип спостереження: MPU6050, PIR, аналоговий LDR. Режими та трактування подій описано в [PRD](docs/PRD.md); жоден сигнал не встановлює особу чи намір людини.
 
-Середовище: Ubuntu 24.04, Docker, STM32 HAL, Wokwi. Форма B, Nucleo-C031C6. Фізичної плати немає.
+[Звіт ЛР2](docs/lab2/report.pdf) · [Pinout](docs/pinout.md) · [Архітектура](docs/architecture.md) · [Власні захвати](docs/captures/README.md)
 
-У ЛР1 використано незмінену прошивку шаблону: USART2 PA2/PA3, 115200 8N1, повідомлення `STM32C031C6 ready`, `tick` і перемикання LED PA5 кожні 1000 мс. Повний цикл увімкнення й вимкнення LED займає приблизно 2 с. Датчиків у схемі ще немає.
+Середовище: Ubuntu 24.04, Docker, STM32 HAL, Wokwi. Відкрити корінь проєкту у VS Code, зібрати та виконати Wokwi: Start Simulator. Схема diagram.json; firmware.hex/elf у firmware/build. Базовий CubeMX .ioc описує Core; додаткові ADC/GPIO налаштовані в Platform/board.c.
 
 ```sh
-make clean
 make build
+make test
+make test-linux
+make coverage
+make sanitize
 ```
 
-Результат: `firmware/build/firmware.elf`, `.hex`, `.bin`. У VS Code відкрийте цю папку, натисніть F1, виберіть `Wokwi: Start Simulator`. У шаблоні немає цілей `make flash` і `make monitor`; для форми B їхню роль виконує запуск симулятора та його Serial Monitor. Використовуйте наявну ліцензію Wokwi.
+UART 115200 8N1, команди `selftest`, `status`, `calibrate`, `mode`, `ack`, `imuaddr 0x68`, `imuaddr 0x69`. Після початкового фону очікуються IMU valid, Z 1000 mg, ADC valid, PIR 0. Калібрування робити у спокої. Відмова адреси не зупиняє інші сенсори.
 
-03.10.2026 перевірено код і дві чисті Docker-збірки на macOS ARM64, Docker Desktop Linux ARM64. SHA256 усіх трьох артефактів збігаються між збірками. Це ще не результат виконання в Ubuntu VM або Wokwi. [Докази й межі перевірки](docs/validation/README.md).
+На власних записах 15.10.2026: SCL 100 кГц, період IMU 20.009 мс, період ADC 49.992 мс. Coverage App+Devices 96.96% рядків, 79.08% гілок; Board/HAL не входять. [CI інтеграційного коміту](https://github.com/StasDobranovskyi/LabWatch/actions/runs/38726348661).
 
-ЛР2 додасть PIR GPIO для руху оператора поруч, MPU6050 I²C для руху/удару приладу та LDR ADC для світла під кожухом. Режими очікування, роботи й обслуговування матимуть різні правила. Робоча вібрація потребує калібрування; PIR дає інформаційну подію, світло не доводить відкриття кожуха.
+VCD/SR/PVS і SHA256 зберігаються у docs/captures; окремий `.origin.json` фіксує абсолютний offset кожного вікна. Повні VCD стиснені без втрат. Скриншоти у docs/lab2/figures походять із власного виконання Wokwi/PulseView. Для UART є також текстовий декод wire-uart.txt. Розрахунковий бюджет живлення та межі моделі відокремлено від вимірювань.
 
-- [Словник](CONTEXT.md), [PRD](docs/PRD.md), [компоненти та джерела](docs/hardware-components.md).
-- [План ЛР1/ЛР2](docs/lab-plan.md), [сценарії перевірки](docs/test-plan.md), [передача у VM](docs/vm-transfer.md).
-- [Що залишилось до здачі](docs/submission-checklist.md), [оригінальний README шаблону](docs/template-readme.md).
-
-Локально `main` містить один порожній початковий коміт, `feature/lab-1` містить п'ять комітів проєкту. Підготовку виконано 03.10.2026. Дати Git встановлено за погодженим графіком 28.09–03.10.2026, це не журнал роботи в минулі дні. Remote збережено без змін, публікація не виконана. PR у `main` створює власник після демонстрації й підготовки звіту.
+ЛР2 передається гілкою feature/lab-2 і тегом lab2; pull request у main створюється окремо.
