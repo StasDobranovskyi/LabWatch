@@ -1,0 +1,166 @@
+4.587475 ms project=LabWatch sensors=MPU6050,PIR,LDR units=mg,mdps,adc commands=status,selftest,calibrate,mode,ack
+20.927500 ms seq=1 time_ms=4 mode=idle src=IMU event=whoami_0x68 level=INFO value=104
+32.553900 ms seq=2 time_ms=22 mode=idle src=CAL event=calibration_required level=INFO value=0
+1007.181100 ms time_ms=1002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=0 alarm=0 tx_overflow_events=0
+2007.197275 ms time_ms=2002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=0 alarm=0 tx_overflow_events=0
+3007.183675 ms time_ms=3002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=0 alarm=0 tx_overflow_events=0
+4007.160350 ms time_ms=4002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=0 alarm=0 tx_overflow_events=0
+5007.135775 ms time_ms=5002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=0 alarm=0 tx_overflow_events=0
+6007.121925 ms time_ms=6002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=0 alarm=0 tx_overflow_events=0
+7007.079350 ms time_ms=7002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=0 alarm=0 tx_overflow_events=0
+8007.056775 ms time_ms=8002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=0 alarm=0 tx_overflow_events=0
+9007.036675 ms time_ms=9002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=0 alarm=0 tx_overflow_events=0
+9424.797475 ms seq=3 time_ms=9416 mode=idle src=IMU event=selftest_pass level=INFO value=0
+10006.880600 ms time_ms=10002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=0 alarm=0 tx_overflow_events=0
+10260.718550 ms seq=4 time_ms=10257 mode=idle src=CAL event=calibrating level=INFO value=0
+11006.810275 ms time_ms=11002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+12006.784925 ms time_ms=12002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+13006.788600 ms time_ms=13002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+14006.731775 ms time_ms=14002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+15006.744175 ms time_ms=15002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+16006.735350 ms time_ms=16002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+17006.685775 ms time_ms=17002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+18006.686425 ms time_ms=18002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+19006.653600 ms time_ms=19002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+20006.643275 ms time_ms=20002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+20252.881150 ms seq=5 time_ms=20250 mode=idle src=CAL event=calibration_ready level=INFO value=0
+21006.481425 ms time_ms=21002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,0 cal=0 alarm=0 tx_overflow_events=0
+21253.201300 ms seq=6 time_ms=21250 mode=idle src=CMD event=status level=INFO value=0
+22006.489600 ms time_ms=22002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,0 cal=0 alarm=0 tx_overflow_events=0
+23006.440525 ms time_ms=23002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,0 cal=0 alarm=0 tx_overflow_events=0
+23261.023450 ms seq=7 time_ms=23258 mode=idle src=IMU event=sensor_error level=ERROR value=0
+23273.280175 ms seq=8 time_ms=23258 mode=idle src=CMD event=address_changed level=INFO value=105
+24006.465925 ms time_ms=24002 mode=idle imu=invalid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=0 alarm=0 tx_overflow_events=0
+25006.438350 ms time_ms=25002 mode=idle imu=invalid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=0 alarm=0 tx_overflow_events=0
+25252.235725 ms seq=9 time_ms=25249 mode=idle src=CMD event=status level=INFO value=0
+26006.433525 ms time_ms=26002 mode=idle imu=invalid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=0 alarm=0 tx_overflow_events=0
+26252.867900 ms seq=10 time_ms=26250 mode=idle src=CMD event=address_changed level=INFO value=104
+26265.908275 ms seq=11 time_ms=26250 mode=idle src=IMU event=sensor_recovered level=INFO value=0
+26278.790600 ms seq=12 time_ms=26250 mode=idle src=IMU event=whoami_0x68 level=INFO value=104
+26291.204550 ms seq=13 time_ms=26267 mode=idle src=CAL event=calibration_required level=INFO value=0
+27006.399175 ms time_ms=27002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=0 alarm=0 tx_overflow_events=0
+28006.351350 ms time_ms=28002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=0 alarm=0 tx_overflow_events=0
+29006.348775 ms time_ms=29002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=0 alarm=0 tx_overflow_events=0
+29252.029150 ms seq=14 time_ms=29249 mode=idle src=CAL event=calibrating level=INFO value=0
+30006.323175 ms time_ms=30002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+31006.296350 ms time_ms=31002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+32006.279025 ms time_ms=32002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+33006.245175 ms time_ms=33002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+34006.228850 ms time_ms=34002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+35006.200275 ms time_ms=35002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+36006.169925 ms time_ms=36002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+37006.194600 ms time_ms=37002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+38006.176525 ms time_ms=38002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+39006.136925 ms time_ms=39002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=0,0 cal=1 alarm=0 tx_overflow_events=0
+39236.498150 ms seq=15 time_ms=39234 mode=idle src=CAL event=calibration_ready level=INFO value=0
+40006.096350 ms time_ms=40002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,0 cal=0 alarm=0 tx_overflow_events=0
+40252.196225 ms seq=16 time_ms=40249 mode=idle src=CMD event=status level=INFO value=0
+41006.101275 ms time_ms=41002 mode=idle imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,0 cal=0 alarm=0 tx_overflow_events=0
+41260.975450 ms seq=17 time_ms=41258 mode=work src=CMD event=mode_idle_to_work level=INFO value=0
+41276.535900 ms seq=18 time_ms=41274 mode=work src=CAL event=calibration_required level=INFO value=1
+42006.083175 ms time_ms=42002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,0 cal=0 alarm=0 tx_overflow_events=0
+42260.854625 ms seq=19 time_ms=42258 mode=work src=CAL event=calibrating level=INFO value=0
+43006.080350 ms time_ms=43002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,0 cal=1 alarm=0 tx_overflow_events=0
+44006.012025 ms time_ms=44002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,0 cal=1 alarm=0 tx_overflow_events=0
+45006.030675 ms time_ms=45002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,0 cal=1 alarm=0 tx_overflow_events=0
+46005.976600 ms time_ms=46002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,0 cal=1 alarm=0 tx_overflow_events=0
+47005.959525 ms time_ms=47002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,0 cal=1 alarm=0 tx_overflow_events=0
+48005.929675 ms time_ms=48002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,0 cal=1 alarm=0 tx_overflow_events=0
+49005.914850 ms time_ms=49002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,0 cal=1 alarm=0 tx_overflow_events=0
+50005.917275 ms time_ms=50002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,0 cal=1 alarm=0 tx_overflow_events=0
+51005.891925 ms time_ms=51002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,0 cal=1 alarm=0 tx_overflow_events=0
+52005.868350 ms time_ms=52002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,0 cal=1 alarm=0 tx_overflow_events=0
+52256.240650 ms seq=20 time_ms=52254 mode=work src=CAL event=calibration_ready level=INFO value=0
+53005.826525 ms time_ms=53002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+53252.225900 ms seq=21 time_ms=53250 mode=work src=CMD event=status level=INFO value=0
+54005.804675 ms time_ms=54002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+55005.797100 ms time_ms=55002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+56005.774525 ms time_ms=56002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+57005.782175 ms time_ms=57002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+58005.750850 ms time_ms=58002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+59005.708525 ms time_ms=59002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+60005.712675 ms time_ms=60002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+61005.670100 ms time_ms=61002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+62005.641525 ms time_ms=62002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+63005.642425 ms time_ms=63002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+64005.602100 ms time_ms=64002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+65005.589525 ms time_ms=65002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+66005.563425 ms time_ms=66002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+67005.540100 ms time_ms=67002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+68005.521025 ms time_ms=68002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+69005.498425 ms time_ms=69002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+70005.515600 ms time_ms=70002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+71005.473275 ms time_ms=71002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+72005.439425 ms time_ms=72002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+73005.426600 ms time_ms=73002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+74005.392275 ms time_ms=74002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+75005.401425 ms time_ms=75002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+76005.350350 ms time_ms=76002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+77005.357275 ms time_ms=77002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+78005.309175 ms time_ms=78002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+79005.303600 ms time_ms=79002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+80005.261525 ms time_ms=80002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+81005.250925 ms time_ms=81002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+82005.265100 ms time_ms=82002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+83005.220525 ms time_ms=83002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+84005.210675 ms time_ms=84002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+85005.168350 ms time_ms=85002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+86005.161275 ms time_ms=86002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+87005.165925 ms time_ms=87002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+88005.136100 ms time_ms=88002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+89005.097275 ms time_ms=89002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+90005.063425 ms time_ms=90002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+91005.055850 ms time_ms=91002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+92005.053025 ms time_ms=92002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+93005.008925 ms time_ms=93002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+94004.974600 ms time_ms=94002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+95004.974525 ms time_ms=95002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+96004.956175 ms time_ms=96002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+97004.908350 ms time_ms=97002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+98004.922275 ms time_ms=98002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+99004.878675 ms time_ms=99002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+100004.868100 ms time_ms=100002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+101004.860025 ms time_ms=101002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+102004.824675 ms time_ms=102002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+103004.813100 ms time_ms=103002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+104004.784025 ms time_ms=104002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+105004.772425 ms time_ms=105002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+106004.774850 ms time_ms=106002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+107004.722775 ms time_ms=107002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+108004.704925 ms time_ms=108002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+109004.688600 ms time_ms=109002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+110004.652525 ms time_ms=110002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+111004.637175 ms time_ms=111002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+112004.625100 ms time_ms=112002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+113004.626775 ms time_ms=113002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+114004.583425 ms time_ms=114002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+115004.571350 ms time_ms=115002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+116004.564775 ms time_ms=116002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+117004.512675 ms time_ms=117002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+118004.516350 ms time_ms=118002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+119004.509775 ms time_ms=119002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+120004.479675 ms time_ms=120002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+121004.431600 ms time_ms=121002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+122004.435025 ms time_ms=122002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+123004.419425 ms time_ms=123002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+124004.405850 ms time_ms=124002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+125004.376025 ms time_ms=125002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+126004.335925 ms time_ms=126002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+127004.314600 ms time_ms=127002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+128004.282775 ms time_ms=128002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+129004.259675 ms time_ms=129002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+130004.266600 ms time_ms=130002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+131004.252525 ms time_ms=131002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+132004.234675 ms time_ms=132002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+133004.211100 ms time_ms=133002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+134004.161775 ms time_ms=134002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+135004.169175 ms time_ms=135002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+136004.116100 ms time_ms=136002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+137004.092275 ms time_ms=137002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+138004.089425 ms time_ms=138002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+139004.088600 ms time_ms=139002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+140004.072775 ms time_ms=140002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+141004.024925 ms time_ms=141002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+142004.029600 ms time_ms=142002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+143003.978775 ms time_ms=143002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0
+144003.980175 ms time_ms=144002 mode=work imu=valid ax_mg=0 ay_mg=0 az_mg=1000 gx_mdps=0 gy_mdps=0 gz_mdps=0 light_raw=3413 light_valid=1 pir=0 baseline=1,1 cal=0 alarm=0 tx_overflow_events=0

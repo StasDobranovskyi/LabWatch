@@ -1,0 +1,7 @@
+{
+  "source": "real-events.vcd",
+  "source_sha256": "cbca973d22c6d7496f8d090c3cdafbe64583fee9332658acb0e17547b4739da8",
+  "start_ns": 6236025,
+  "end_ns": 6351025,
+  "output_sha256": "debf16b03de4431cd762466d2d5a0d1387a90c47233dbc50c76e8fd32165b450"
+}

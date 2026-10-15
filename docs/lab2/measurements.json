@@ -1,0 +1,328 @@
+{
+  "source": "real-events.vcd",
+  "sha256": "cbca973d22c6d7496f8d090c3cdafbe64583fee9332658acb0e17547b4739da8",
+  "end_ns": 147408448325,
+  "scl_period_median_ns": 10000,
+  "adc_period_median_ns": 49992450,
+  "adc_marker_width_median_ns": 65225.0,
+  "PIR_pulses": [
+    {
+      "start_ns": 63924543775,
+      "width_ns": 5000000025
+    }
+  ],
+  "whoami": [
+    {
+      "start_ns": 6241025,
+      "bytes": [
+        208,
+        117
+      ],
+      "acks": [
+        true,
+        true
+      ],
+      "byte_end_ns": [
+        6331025,
+        6570125
+      ],
+      "end_ns": 6585125,
+      "end": "STOP"
+    },
+    {
+      "start_ns": 6795150,
+      "bytes": [
+        209,
+        104
+      ],
+      "acks": [
+        true,
+        false
+      ],
+      "byte_end_ns": [
+        6885150,
+        6975150
+      ],
+      "end_ns": 6990150,
+      "end": "STOP"
+    }
+  ],
+  "first_burst": [
+    {
+      "start_ns": 21604450,
+      "bytes": [
+        208,
+        59
+      ],
+      "acks": [
+        true,
+        true
+      ],
+      "byte_end_ns": [
+        21694450,
+        21831625
+      ],
+      "end_ns": 21846625,
+      "end": "STOP"
+    },
+    {
+      "start_ns": 22033650,
+      "bytes": [
+        209,
+        0,
+        0,
+        0,
+        0,
+        64,
+        0,
+        239,
+        92,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "acks": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "byte_end_ns": [
+        22123650,
+        22213650,
+        22303650,
+        22393650,
+        22483650,
+        22573650,
+        22663650,
+        22753650,
+        22843650,
+        22933650,
+        23023650,
+        23113650,
+        23203650,
+        23293650,
+        23383650
+      ],
+      "end_ns": 23398650,
+      "end": "STOP"
+    }
+  ],
+  "motion_burst": {
+    "start_ns": 63929774850,
+    "bytes": [
+      209,
+      127,
+      255,
+      0,
+      0,
+      64,
+      0,
+      239,
+      92,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "acks": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false
+    ],
+    "byte_end_ns": [
+      63929864850,
+      63929954850,
+      63930044850,
+      63930134850,
+      63930224850,
+      63930314850,
+      63930404850,
+      63930494850,
+      63930584850,
+      63930674850,
+      63930764850,
+      63930854850,
+      63930944850,
+      63931034850,
+      63931124850
+    ],
+    "end_ns": 63931139850,
+    "end": "STOP"
+  },
+  "nack": {
+    "start_ns": 23266399350,
+    "bytes": [
+      210
+    ],
+    "acks": [
+      false
+    ],
+    "byte_end_ns": [
+      23266489350
+    ],
+    "end_ns": 23266504350,
+    "end": "STOP"
+  },
+  "events": [
+    {
+      "time_ns": 20927500,
+      "text": "seq=1 time_ms=4 mode=idle src=IMU event=whoami_0x68 level=INFO value=104"
+    },
+    {
+      "time_ns": 32553900,
+      "text": "seq=2 time_ms=22 mode=idle src=CAL event=calibration_required level=INFO value=0"
+    },
+    {
+      "time_ns": 11782794350,
+      "text": "seq=3 time_ms=11774 mode=idle src=IMU event=selftest_pass level=INFO value=0"
+    },
+    {
+      "time_ns": 12369220400,
+      "text": "seq=4 time_ms=12366 mode=idle src=CAL event=calibrating level=INFO value=0"
+    },
+    {
+      "time_ns": 22353845625,
+      "text": "seq=5 time_ms=22351 mode=idle src=CAL event=calibration_ready level=INFO value=0"
+    },
+    {
+      "time_ns": 23568910800,
+      "text": "seq=6 time_ms=23566 mode=idle src=CMD event=status level=INFO value=0"
+    },
+    {
+      "time_ns": 60567991225,
+      "text": "seq=7 time_ms=60566 mode=idle src=CMD event=acknowledged level=INFO value=0"
+    },
+    {
+      "time_ns": 63926152025,
+      "text": "seq=8 time_ms=63924 mode=idle src=GPIO event=operator_motion level=INFO value=1"
+    },
+    {
+      "time_ns": 63938879325,
+      "text": "seq=9 time_ms=63931 mode=idle src=IMU event=shock_candidate level=ALARM value=1999"
+    },
+    {
+      "time_ns": 64159903400,
+      "text": "seq=10 time_ms=64158 mode=idle src=ADC event=light_change level=ALARM value=32"
+    },
+    {
+      "time_ns": 64433388175,
+      "text": "seq=11 time_ms=64431 mode=idle src=IMU event=instrument_motion level=ALARM value=1999"
+    }
+  ],
+  "fault_events": [
+    {
+      "time_ns": 20927500,
+      "text": "seq=1 time_ms=4 mode=idle src=IMU event=whoami_0x68 level=INFO value=104"
+    },
+    {
+      "time_ns": 32553900,
+      "text": "seq=2 time_ms=22 mode=idle src=CAL event=calibration_required level=INFO value=0"
+    },
+    {
+      "time_ns": 9424797475,
+      "text": "seq=3 time_ms=9416 mode=idle src=IMU event=selftest_pass level=INFO value=0"
+    },
+    {
+      "time_ns": 10260718550,
+      "text": "seq=4 time_ms=10257 mode=idle src=CAL event=calibrating level=INFO value=0"
+    },
+    {
+      "time_ns": 20252881150,
+      "text": "seq=5 time_ms=20250 mode=idle src=CAL event=calibration_ready level=INFO value=0"
+    },
+    {
+      "time_ns": 21253201300,
+      "text": "seq=6 time_ms=21250 mode=idle src=CMD event=status level=INFO value=0"
+    },
+    {
+      "time_ns": 23261023450,
+      "text": "seq=7 time_ms=23258 mode=idle src=IMU event=sensor_error level=ERROR value=0"
+    },
+    {
+      "time_ns": 23273280175,
+      "text": "seq=8 time_ms=23258 mode=idle src=CMD event=address_changed level=INFO value=105"
+    },
+    {
+      "time_ns": 25252235725,
+      "text": "seq=9 time_ms=25249 mode=idle src=CMD event=status level=INFO value=0"
+    },
+    {
+      "time_ns": 26252867900,
+      "text": "seq=10 time_ms=26250 mode=idle src=CMD event=address_changed level=INFO value=104"
+    },
+    {
+      "time_ns": 26265908275,
+      "text": "seq=11 time_ms=26250 mode=idle src=IMU event=sensor_recovered level=INFO value=0"
+    },
+    {
+      "time_ns": 26278790600,
+      "text": "seq=12 time_ms=26250 mode=idle src=IMU event=whoami_0x68 level=INFO value=104"
+    },
+    {
+      "time_ns": 26291204550,
+      "text": "seq=13 time_ms=26267 mode=idle src=CAL event=calibration_required level=INFO value=0"
+    },
+    {
+      "time_ns": 29252029150,
+      "text": "seq=14 time_ms=29249 mode=idle src=CAL event=calibrating level=INFO value=0"
+    },
+    {
+      "time_ns": 39236498150,
+      "text": "seq=15 time_ms=39234 mode=idle src=CAL event=calibration_ready level=INFO value=0"
+    },
+    {
+      "time_ns": 40252196225,
+      "text": "seq=16 time_ms=40249 mode=idle src=CMD event=status level=INFO value=0"
+    },
+    {
+      "time_ns": 41260975450,
+      "text": "seq=17 time_ms=41258 mode=work src=CMD event=mode_idle_to_work level=INFO value=0"
+    },
+    {
+      "time_ns": 41276535900,
+      "text": "seq=18 time_ms=41274 mode=work src=CAL event=calibration_required level=INFO value=1"
+    },
+    {
+      "time_ns": 42260854625,
+      "text": "seq=19 time_ms=42258 mode=work src=CAL event=calibrating level=INFO value=0"
+    },
+    {
+      "time_ns": 52256240650,
+      "text": "seq=20 time_ms=52254 mode=work src=CAL event=calibration_ready level=INFO value=0"
+    },
+    {
+      "time_ns": 53252225900,
+      "text": "seq=21 time_ms=53250 mode=work src=CMD event=status level=INFO value=0"
+    }
+  ],
+  "imu_burst_period_median_ns": 20008575
+}
