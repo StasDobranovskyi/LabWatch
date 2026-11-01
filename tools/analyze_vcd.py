@@ -51,11 +51,12 @@ def at(trace, time):
     return values[index]
 
 
-def uart(trace, baud=115200):
+def uart(trace, baud=115200, end_ns=None):
     bit = 1e9 / baud
+    capture_end = trace[0][-1] if end_ns is None else end_ns
     result, until, previous = [], -1, 1
     for time, value in zip(*trace):
-        if previous and not value and time >= until and time + 10 * bit <= trace[0][-1]:
+        if previous and not value and time >= until and time + 10 * bit <= capture_end:
             if at(trace, time + .5 * bit) == 0 and at(trace, time + 9.5 * bit) == 1:
                 byte = sum(at(trace, time + (1.5 + index) * bit) << index for index in range(8))
                 result.append({'time_ns': time, 'byte': byte})

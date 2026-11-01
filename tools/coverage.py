@@ -17,8 +17,8 @@ compiler = os.environ.get('CC', 'cc')
 gcov = os.environ.get('GCOV', 'gcov')
 flags = ['-std=c11', '-O0', '-g', '-Wall', '-Wextra', '-Werror']
 includes = [f'-I{root / part}' for part in ['firmware/Devices', 'firmware/App', 'firmware/Platform', 'tests/fakes']]
-portable = ['firmware/Devices/mpu6050.c', 'firmware/App/app.c', 'firmware/App/events.c', 'firmware/App/commands.c']
-suites = ['test_mpu', 'test_calibration', 'test_events', 'test_acceptance', 'test_runtime']
+portable = ['firmware/Devices/mpu6050.c', 'firmware/App/instrument.c', 'firmware/App/journal.c', 'firmware/Platform/perf.c', 'firmware/Platform/clock16.c']
+suites = ['test_mpu', 'test_calibration', 'test_events', 'test_acceptance', 'test_runtime', 'test_clock']
 objects = []
 instrumented = []
 for relative in portable + ['firmware/Platform/runtime.c']:
@@ -69,7 +69,7 @@ for annotation in sorted(output.glob('*.gcov')):
 totals = {key: sum(item[key] for item in results) for key in ['lines', 'executed', 'branches', 'taken']}
 totals['line_percent'] = round(100 * totals['executed'] / totals['lines'], 2)
 totals['branch_taken_percent'] = round(100 * totals['taken'] / totals['branches'], 2)
-report = {'scope': 'Portable App and Devices only; Board/HAL are excluded', 'files': results, 'totals': totals,
+report = {'scope': 'Portable Instrument, Journal, Devices, perf and clock16 only; Board/HAL/runtime are excluded', 'files': results, 'totals': totals,
           'gate': {'line_percent': 85, 'branch_taken_percent': 70}}
 (output / 'coverage.json').write_text(json.dumps(report, indent=2) + '\n')
 print(json.dumps(report, indent=2))

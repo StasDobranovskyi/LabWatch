@@ -1,62 +1,46 @@
 #include "mpu6050.h"
+#include "fixtures/mpu-captured.h"
 #include <assert.h>
 #include <stdio.h>
+#include <stdbool.h>
 #include <string.h>
-#include "fixtures/mpu-captured.h"
-
-typedef struct { BusResult result; uint8_t id; unsigned writes, reads, fail_write; } Fake;
-static BusResult read_bus(void *context, uint8_t address, uint8_t reg, uint8_t *data, size_t size) {
-    Fake *fake = context;
-    assert(address == 0x68);
-    fake->reads++;
-    if (fake->result != BUS_OK) return fake->result;
-    if (reg == 0x75) { assert(size == 1); data[0] = fake->id; }
-    else { assert(reg == 0x3b && size == 14); memset(data, 0, size); data[4] = 0x40; }
+typedef struct { uint8_t map[128];unsigned call,fail_at;BusResult failure;bool bad_readback; } SensorModel;
+static BusResult transfer(SensorModel *m,uint8_t address,uint8_t reg,void *p,size_t n,bool write) {
+    assert(address==0x68&&reg+n<=128);
+    if(++m->call==m->fail_at)return m->failure;
+    if(write)memcpy(m->map+reg,p,n);
+    else {memcpy(p,m->map+reg,n);if(m->bad_readback&&reg==0x19)((uint8_t *)p)[0]^=1;}
     return BUS_OK;
 }
-static BusResult write_bus(void *context, uint8_t address, uint8_t reg, const uint8_t *data, size_t size) {
-    static const uint8_t registers[] = {0x6b, 0x19, 0x1a, 0x1b, 0x1c};
-    static const uint8_t values[] = {1, 9, 3, 0, 0};
-    Fake *fake = context;
-    assert(address == 0x68 && size == 1);
-    assert(reg == registers[fake->writes] && data[0] == values[fake->writes]);
-    fake->writes++;
-    if (fake->fail_write == fake->writes) return BUS_TIMEOUT;
-    return fake->result;
-}
+static BusResult rd(void *c,uint8_t a,uint8_t r,uint8_t *p,size_t n) { return transfer(c,a,r,p,n,false); }
+static BusResult wr(void *c,uint8_t a,uint8_t r,const uint8_t *p,size_t n) { return transfer(c,a,r,(void *)p,n,true); }
 int main(void) {
-    Fake fake = {.result = BUS_OK, .id = 0x68};
-    Mpu6050 device = {{&fake, read_bus, write_bus}, 0x68};
-    assert(mpu6050_init(&device) == BUS_OK && fake.writes == 5);
+    unsigned failures=0;
+    for(unsigned call=1;call<=5;++call)for(BusResult e=BUS_NACK;e<=BUS_ERROR;++e) {
+        SensorModel m={.fail_at=call,.failure=e};m.map[0x75]=0x68;Mpu6050 d={{&m,rd,wr},0x68};
+        assert(mpu6050_init(&d)==e&&m.call==call);++failures;
+    }
+    SensorModel m={0};m.map[0x75]=0x68;Mpu6050 d={{&m,rd,wr},0x68};
+    assert(mpu6050_init(&d)==BUS_OK&&m.call==5);
+    assert(m.map[0x19]==19&&m.map[0x1a]==3&&m.map[0x1b]==0&&m.map[0x1c]==0&&m.map[0x6b]==1);
+    m.bad_readback=true;assert(mpu6050_init(&d)==BUS_ERROR);m.bad_readback=false;
+    m.map[0x75]=0;assert(mpu6050_init(&d)==BUS_ERROR);m.map[0x75]=0x68;
     ImuSample sample;
-    assert(mpu6050_read(&device, &sample) == BUS_OK && sample.accel_mg[2] == 1000);
-    assert(sample.temperature_mc == 36530);
-    fake.id = 0x69; fake.writes = 0;
-    assert(mpu6050_init(&device) == BUS_ERROR && fake.writes == 0);
-    for (BusResult failure = BUS_NACK; failure <= BUS_ERROR; ++failure) {
-        fake.result = failure;
-        memset(&sample, 0x55, sizeof(sample));
-        ImuSample before = sample;
-        assert(mpu6050_init(&device) == failure);
-        assert(mpu6050_read(&device, &sample) == failure);
-        assert(memcmp(&sample, &before, sizeof(sample)) == 0);
+    memcpy(m.map+0x3b,captured_stationary,14);assert(mpu6050_read(&d,&sample)==BUS_OK&&sample.accel_mg[2]==1000&&sample.temperature_mc==24001);
+    memcpy(m.map+0x3b,captured_moving,14);assert(mpu6050_read(&d,&sample)==BUS_OK&&sample.accel_mg[0]==1999&&sample.gyro_mdps[0]==CAPTURED_GYRO_X_MDPS);
+    for(BusResult e=BUS_NACK;e<=BUS_ERROR;++e) {
+        ImuSample before=sample;m.fail_at=m.call+1;m.failure=e;
+        assert(mpu6050_read(&d,&sample)==e&&!memcmp(&sample,&before,sizeof sample));
     }
-    const uint8_t limits[14] = {0x80,0, 0x7f,0xff, 0x40,0, 0,0, 0x80,0, 0x7f,0xff, 0,0};
-    mpu6050_decode(limits, &sample);
-    assert(sample.accel_mg[0] == -2000 && sample.accel_mg[1] == 1999);
-    assert(sample.gyro_mdps[0] == -250137 && sample.gyro_mdps[1] == 250129);
-    for (unsigned index = 1; index <= 5; ++index) {
-        Fake failed = {.result = BUS_OK, .id = 0x68, .fail_write = index};
-        device.bus.context = &failed;
-        assert(mpu6050_init(&device) == BUS_TIMEOUT && failed.writes == index);
+    /* Exhaust all signed raw values on every axis; expected conversion uses an
+     * independent signed integer, not the decoder's byte arithmetic. */
+    for(int raw=-32768;raw<=32767;++raw)for(unsigned axis=0;axis<3;++axis) {
+        uint8_t frame[14]={0};unsigned u=(unsigned)raw&65535;
+        frame[2*axis]=(uint8_t)(u/256);frame[2*axis+1]=(uint8_t)u;
+        frame[8+2*axis]=(uint8_t)(u/256);frame[9+2*axis]=(uint8_t)u;
+        mpu6050_decode(frame,&sample);
+        assert(sample.accel_mg[axis]==raw*1000/16384&&sample.gyro_mdps[axis]==raw*1000/131);
     }
-    mpu6050_decode(captured_stationary, &sample);
-    assert(sample.accel_mg[0] == 0 && sample.accel_mg[1] == 0 && sample.accel_mg[2] == 1000);
-    assert(sample.temperature_mc == 24001);
-    mpu6050_decode(captured_moving, &sample);
-    assert(sample.accel_mg[0] == 1999 && sample.accel_mg[1] == 0 && sample.accel_mg[2] == 1000);
-    assert(sample.gyro_mdps[0] == CAPTURED_GYRO_X_MDPS);
-    assert(sample.temperature_mc == 24001);
-    puts("MPU6050: identity, initialization order, units, signed limits and bus failures passed");
+    printf("MPU host: 50Hz configuration read-back, %u init failures, preserved sample on read failure, own Lab2 vectors and 196608 signed-axis cases passed\n",failures);
     return 0;
 }

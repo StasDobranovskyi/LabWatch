@@ -39,9 +39,14 @@ C_SOURCES =  \
 Devices/mpu6050.c \
 Platform/board.c \
 Platform/runtime.c \
-App/app.c \
-App/events.c \
-App/commands.c \
+App/instrument.c \
+App/journal.c \
+Platform/perf.c \
+Platform/timing.c \
+Platform/clock16.c \
+Platform/rx_rearm.c \
+Platform/storage.c \
+Platform/logfmt.c \
 Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.c \
 Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c \
 Core/Src/main.c \
@@ -89,8 +94,8 @@ AS = $(PREFIX)gcc -x assembler-with-cpp
 CP = $(PREFIX)objcopy
 SZ = $(PREFIX)size
 endif
-HEX = $(CP) -O ihex
-BIN = $(CP) -O binary -S
+HEX = $(CP) -O ihex --gap-fill 0xff --pad-to 0x08008000
+BIN = $(CP) -O binary -S --gap-fill 0xff --pad-to 0x08008000
  
 #######################################
 # CFLAGS
@@ -143,6 +148,7 @@ endif
 
 
 # Generate dependency information
+CFLAGS += -fstack-usage -Wstack-usage=512
 CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)"
 
 
@@ -155,7 +161,7 @@ LDSCRIPT = STM32C031C6Tx_FLASH.ld
 # libraries
 LIBS = -lc -lm -lnosys 
 LIBDIR = 
-LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
+LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections,--print-memory-usage
 
 # default action: build all
 all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin

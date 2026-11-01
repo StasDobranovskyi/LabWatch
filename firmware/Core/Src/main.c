@@ -82,6 +82,8 @@ int main(void)
 
   /* USER CODE END 1 */
 
+  board_stack_paint();
+
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */

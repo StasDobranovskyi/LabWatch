@@ -3,11 +3,11 @@ PLATFORM := $(shell uname -s)-$(shell uname -m)
 BUILD ?= build/$(PLATFORM)
 CFLAGS ?= -std=c11 -O0 -g -Wall -Wextra -Werror
 CPPFLAGS += -I../firmware/Devices -I../firmware/App -I../firmware/Platform -Ifakes
-APP = ../firmware/App/app.c ../firmware/App/events.c ../firmware/App/commands.c
+APP = ../firmware/App/instrument.c ../firmware/App/journal.c ../firmware/Platform/perf.c ../firmware/Platform/clock16.c ../firmware/Platform/rx_rearm.c
 DEVICE = ../firmware/Devices/mpu6050.c
 RUNTIME = ../firmware/Platform/runtime.c
-SUITES = test_mpu test_calibration test_events test_acceptance test_runtime
-HEADERS = $(wildcard ../firmware/App/*.h ../firmware/Devices/*.h ../firmware/Platform/*.h fakes/*.h fixtures/*.h)
+SUITES = test_mpu test_calibration test_events test_acceptance test_runtime test_logfmt test_clock test_storage test_rx_rearm
+HEADERS = $(wildcard ../firmware/App/*.h ../firmware/Devices/*.h ../firmware/Platform/*.h fakes/*.h fixtures/*.h support.h flash_fake.h)
 
 .PHONY: test clean sanitize
 test: $(SUITES:%=$(BUILD)/%)
@@ -15,6 +15,10 @@ test: $(SUITES:%=$(BUILD)/%)
 
 $(BUILD):
 	mkdir -p "$@"
+$(BUILD)/test_storage: test_storage.c ../firmware/Platform/storage.c $(HEADERS) flash_fakes/main.h | $(BUILD)
+	$(CC) -Iflash_fakes $(CPPFLAGS) $(CFLAGS) -DLW_STORAGE_HOST_TEST $(filter %.c,$^) -o "$@"
+$(BUILD)/test_logfmt: test_logfmt.c ../firmware/Platform/logfmt.c $(HEADERS) | $(BUILD)
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(filter %.c,$^) -o "$@"
 $(BUILD)/test_mpu: test_mpu.c $(DEVICE) $(HEADERS) | $(BUILD)
 	$(CC) $(CPPFLAGS) $(CFLAGS) $(filter %.c,$^) -lm -o "$@"
 $(BUILD)/test_runtime: test_runtime.c $(APP) $(DEVICE) $(RUNTIME) $(HEADERS) | $(BUILD)

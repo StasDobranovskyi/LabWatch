@@ -61,8 +61,8 @@
       "top": -100,
       "left": 520,
       "attrs": {
-        "channelNames": "SCL,SDA,UART_TX,PIR,ADC_MARK,LED,UART_RX",
-        "bufferSize": "4000000",
+        "channelNames": "PIR,IMU_MARK,FLASH_MARK,REACT_MARK,ADC_MARK,UART_TX,UART_RX,LED",
+        "bufferSize": "8000000",
         "triggerMode": "off"
       }
     }
@@ -171,25 +171,25 @@
       []
     ],
     [
-      "nucleo:PB8",
+      "nucleo:PA1",
       "logic:D0",
       "green",
       []
     ],
     [
-      "nucleo:PB9",
+      "nucleo:PA6",
       "logic:D1",
       "green",
       []
     ],
     [
-      "nucleo:PA2",
+      "nucleo:PA7",
       "logic:D2",
       "green",
       []
     ],
     [
-      "nucleo:PA1",
+      "nucleo:PA10",
       "logic:D3",
       "green",
       []
@@ -201,8 +201,20 @@
       []
     ],
     [
-      "nucleo:PA5",
+      "nucleo:PA2",
       "logic:D5",
+      "green",
+      []
+    ],
+    [
+      "nucleo:PA3",
+      "logic:D6",
+      "green",
+      []
+    ],
+    [
+      "nucleo:PA5",
+      "logic:D7",
       "green",
       []
     ],
@@ -210,12 +222,6 @@
       "nucleo:GND.1",
       "logic:GND",
       "black",
-      []
-    ],
-    [
-      "nucleo:PA3",
-      "logic:D6",
-      "gray",
       []
     ]
   ],

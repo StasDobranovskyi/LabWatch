@@ -9,3 +9,10 @@ tests/build/
 *.gcda
 *.gcno
 *.gcov
+
+labwatch-lr3.vcd
+
+# Local experimental builds and Python cache
+firmware/build-*/
+tools/__pycache__/
+*/labwatch-*.vcd

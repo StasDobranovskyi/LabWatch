@@ -1,5 +1,6 @@
 #include "board.h"
 #include "main.h"
+#include "rx_rearm.h"
 
 extern UART_HandleTypeDef huart2;
 static ADC_HandleTypeDef adc;
@@ -8,6 +9,8 @@ static bool initialize_adc(void);
 static volatile uint16_t rx_head, rx_tail;
 static volatile bool rx_overflow;
 static uint8_t rx_byte, rx_ring[256];
+static uint32_t rx_time[256];
+static LwRxRearm rx_rearm;
 static volatile uint16_t tx_head, tx_tail;
 static volatile bool tx_busy, tx_overflow;
 static uint8_t tx_ring[2048];
@@ -122,18 +125,39 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *uart) {
     if (uart != &huart2) return;
     uint16_t next = (uint16_t)((rx_head + 1u) & 255u);
     if (next == rx_tail) rx_overflow = true;
-    else { rx_ring[rx_head] = rx_byte; rx_head = next; }
-    (void)HAL_UART_Receive_IT(&huart2, &rx_byte, 1);
+    else { rx_ring[rx_head] = rx_byte; rx_time[rx_head] = board_micros(); rx_head = next; }
+    rx_rearm_request(&rx_rearm);
+    board_rx_service();
 }
 void HAL_UART_ErrorCallback(UART_HandleTypeDef *uart) {
-    if (uart == &huart2) { rx_overflow = true; (void)HAL_UART_Receive_IT(&huart2, &rx_byte, 1); }
+    if (uart == &huart2) { rx_overflow = true; rx_rearm_request(&rx_rearm); board_rx_service(); }
 }
-int board_get_char(void) {
+static int arm_uart_rx(void *context) {
+    (void)context;
+    return (int)HAL_UART_Receive_IT(&huart2, &rx_byte, 1);
+}
+void board_rx_service(void) {
+    uint32_t mask=__get_PRIMASK();__disable_irq();
+    (void)rx_rearm_service(&rx_rearm,arm_uart_rx,NULL);
+    if(!mask)__enable_irq();
+}
+LwRxDiagnostic board_rx_diagnostic(void) {
+    uint32_t mask=__get_PRIMASK();__disable_irq();
+    LwRxDiagnostic d={rx_rearm.attempts,rx_rearm.failures,(uint32_t)huart2.RxState,huart2.ErrorCode,
+      rx_rearm.last_status,rx_rearm.pending,
+      (huart2.Instance->CR1 & USART_CR1_RXNEIE_RXFNEIE)!=0,
+      (huart2.Instance->ISR & USART_ISR_ORE)!=0};
+    if(!mask)__enable_irq();
+    return d;
+}
+int board_get_char_at(uint32_t *time) {
     if (rx_head == rx_tail) return -1;
     uint8_t value = rx_ring[rx_tail];
+    *time = rx_time[rx_tail];
     rx_tail = (uint16_t)((rx_tail + 1u) & 255u);
     return value;
 }
+int board_get_char(void) { uint32_t t;return board_get_char_at(&t); }
 bool board_rx_overflow(void) {
     uint32_t mask = __get_PRIMASK();
     __disable_irq(); bool value = rx_overflow; rx_overflow = false;
@@ -159,12 +183,14 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef *handle) {
 void board_init(void) {
     GPIO_InitTypeDef gpio = {0};
     __HAL_RCC_GPIOA_CLK_ENABLE(); __HAL_RCC_GPIOB_CLK_ENABLE();
-    gpio.Pin = GPIO_PIN_1; gpio.Mode = GPIO_MODE_INPUT; gpio.Pull = GPIO_PULLDOWN; HAL_GPIO_Init(GPIOA, &gpio);
+    gpio.Pin = GPIO_PIN_1; gpio.Mode = GPIO_MODE_IT_RISING_FALLING; gpio.Pull = GPIO_PULLDOWN; HAL_GPIO_Init(GPIOA, &gpio);
     gpio.Pin = GPIO_PIN_4; gpio.Mode = GPIO_MODE_OUTPUT_PP; gpio.Pull = GPIO_NOPULL; HAL_GPIO_Init(GPIOA, &gpio);
     gpio.Pin = GPIO_PIN_0; gpio.Mode = GPIO_MODE_ANALOG; HAL_GPIO_Init(GPIOA, &gpio);
+    gpio.Pin = GPIO_PIN_6 | GPIO_PIN_7 | GPIO_PIN_10; gpio.Mode = GPIO_MODE_OUTPUT_PP; gpio.Pull = GPIO_NOPULL; HAL_GPIO_Init(GPIOA, &gpio);
+    HAL_NVIC_SetPriority(EXTI0_1_IRQn,1,0); HAL_NVIC_EnableIRQ(EXTI0_1_IRQn);
     adc_ready = initialize_adc();
     HAL_NVIC_SetPriority(USART2_IRQn, 2, 0); HAL_NVIC_EnableIRQ(USART2_IRQn);
-    (void)HAL_UART_Receive_IT(&huart2, &rx_byte, 1);
+    rx_rearm_request(&rx_rearm);board_rx_service();
 }
 static bool initialize_adc(void) {
     adc = (ADC_HandleTypeDef){0};
@@ -185,4 +211,15 @@ static bool initialize_adc(void) {
     if (adc_ready) adc_ready = HAL_ADC_ConfigChannel(&adc, &channel) == HAL_OK;
     if (adc_ready) adc_ready = HAL_ADCEx_Calibration_Start(&adc) == HAL_OK;
     return adc_ready;
+}
+
+bool board_write_line(const char *line,size_t n) {
+    unsigned head=tx_head;
+    if(n>((tx_tail-head-1u)&2047u)){tx_overflow=true;return false;}
+    for(size_t i=0;i<n;++i)tx_ring[(head+i)&2047u]=(uint8_t)line[i];
+    uint32_t mask=__get_PRIMASK();__disable_irq();
+    tx_head=(uint16_t)((head+n)&2047u);
+    if(!tx_busy)transmit_next();
+    if(!mask)__enable_irq();
+    return true;
 }

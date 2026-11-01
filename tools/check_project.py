@@ -4,7 +4,7 @@ import json
 import re
 
 root = Path(__file__).resolve().parents[1]
-allowed = {'app.h', 'mpu6050.h', 'stdbool.h', 'stdint.h', 'stddef.h', 'stdio.h', 'string.h', 'limits.h', 'math.h', 'stdlib.h'}
+allowed = {'instrument.h', 'clock16.h', 'journal.h', 'mpu6050.h', 'stdbool.h', 'stdint.h', 'stddef.h', 'stdio.h', 'string.h', 'limits.h', 'math.h', 'stdlib.h'}
 for folder in ['App', 'Devices']:
     for source in (root / 'firmware' / folder).glob('*.[ch]'):
         text = source.read_text()

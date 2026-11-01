@@ -2,5 +2,5 @@
 version = 1
 firmware = 'firmware/build/firmware.hex'
 elf = 'firmware/build/firmware.elf'
-vcdFile = 'wokwi.vcd'
-rfc2217ServerPort = 4501
+vcdFile = 'labwatch-lr3.vcd'
+rfc2217ServerPort = 4537

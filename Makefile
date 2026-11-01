@@ -5,7 +5,7 @@ IMAGE ?= labwatch-build:lab2
 image:
 	docker build -t $(IMAGE) docker
 
-build: image
+build: image stamp
 	docker run --rm -v "$(CURDIR):/workspace" -w /workspace \
 		--user "$(shell id -u):$(shell id -g)" $(IMAGE) \
 		make -C firmware all
@@ -24,3 +24,7 @@ test-linux: image
 	docker run --rm -v "$(CURDIR):/workspace" -w /workspace --user "$(shell id -u):$(shell id -g)" $(IMAGE) make test sanitize
 coverage: image
 	docker run --rm -v "$(CURDIR):/workspace" -w /workspace --user "$(shell id -u):$(shell id -g)" $(IMAGE) python3 tools/coverage.py
+
+.PHONY: stamp
+stamp:
+	python3 tools/stamp.py
