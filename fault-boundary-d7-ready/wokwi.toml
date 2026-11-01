@@ -1,0 +1,6 @@
+[wokwi]
+version = 1
+firmware = '../firmware/build-rx-final/firmware.hex'
+elf = '../firmware/build-rx-final/firmware.elf'
+vcdFile = 'labwatch-fault-boundary-d7.vcd'
+rfc2217ServerPort = 4537
