@@ -1,23 +1,19 @@
 # LabWatch
 
-Інтегрований прототип спостереження: MPU6050, PIR, аналоговий LDR. Режими та трактування подій описано в [PRD](docs/PRD.md); жоден сигнал не встановлює особу чи намір людини.
+Прототип контролю лабораторного приладу: MPU6050, PIR і аналоговий LDR, режими очікування, роботи та обслуговування. PIR створює інформаційну подію й не визначає особу або намір. [Вимоги продукту](docs/PRD.md) · [Архітектура](docs/architecture.md).
 
-[Звіт ЛР2](docs/lab2/report.pdf) · [Pinout](docs/pinout.md) · [Архітектура](docs/architecture.md) · [Власні захвати](docs/captures/README.md)
+ЛР3 використовує один bare-metal super loop без RTOS на STM32C031C6. Середовище: Ubuntu 24.04, Docker, STM32 HAL, Wokwi. Роздільність часу прошивки 1 мс (HAL SysTick); рядок BOOT із TIM3 1 MHz застарілий. Виміряна збірка має source fingerprint `d7c3f569f1d1dfb638999a4578bc940a164f577837d2776d9796671d594cf9fa` та ELF SHA-256 `fbb10f8e971e68c7f920f759c0a21c769ec9440fff2cd9f60147864f338789f2`.
 
-Середовище: Ubuntu 24.04, Docker, STM32 HAL, Wokwi. Відкрити корінь проєкту у VS Code, зібрати та виконати Wokwi: Start Simulator. Схема diagram.json; firmware.hex/elf у firmware/build. Базовий CubeMX .ioc описує Core; додаткові ADC/GPIO налаштовані в Platform/board.c.
+Проведено S1, S2 та S3 у Wokwi. S2 тривав 3620,999 с за шкалою прошивки, але помилка IMU анулювала робочий еталон. S3 зафіксував 55 цифрових пар фронт–реакція у вибраних вікнах видачі журналу і фактичні storage fault та втрати черги. Фізична плата, power cut і частина граничних перевірок не підтверджені. [Задачі](docs/tasks.md) · [Метрики](docs/metrics/README.md) · [Обмеження](docs/limitations.md) · [База ЛР4](docs/baseline-lab4.md).
 
 ```sh
 make build
 make test
+make sanitize
 make test-linux
 make coverage
-make sanitize
 ```
 
-UART 115200 8N1, команди `selftest`, `status`, `calibrate`, `mode`, `ack`, `imuaddr 0x68`, `imuaddr 0x69`. Після початкового фону очікуються IMU valid, Z 1000 mg, ADC valid, PIR 0. Калібрування робити у спокої. Відмова адреси не зупиняє інші сенсори.
+UART 115200 8N1: `status`, `selftest`, `calibrate`, `mode idle|work|service`, `ack`, `imuaddr 0x68|0x69`, `version`, `stats`, `storage`, `journal dump`, `mark`. Wokwi використовує RFC2217 localhost:4537; новий інтерактивний запуск потребує окремого особистого GUI-допуску. Не активувати trial.
 
-На власних записах 15.10.2026: SCL 100 кГц, період IMU 20.009 мс, період ADC 49.992 мс. Coverage App+Devices 96.96% рядків, 79.08% гілок; Board/HAL не входять. [CI інтеграційного коміту](https://github.com/StasDobranovskyi/LabWatch/actions/runs/38726348661).
-
-VCD/SR/PVS і SHA256 зберігаються у docs/captures; окремий `.origin.json` фіксує абсолютний offset кожного вікна. Повні VCD стиснені без втрат. Скриншоти у docs/lab2/figures походять із власного виконання Wokwi/PulseView. Для UART є також текстовий декод wire-uart.txt. Розрахунковий бюджет живлення та межі моделі відокремлено від вимірювань.
-
-ЛР2 передається гілкою feature/lab-2 і тегом lab2; pull request у main створюється окремо.
+[Історичний звіт ЛР2](docs/lab2/report.pdf) · [Захвати ЛР2](docs/captures/README.md). Старі результати не є вимірами поточної прошивки.
